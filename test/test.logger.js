@@ -25,9 +25,9 @@ cluster.on('listening', function(){
     res.on('end', function(){
       var files = fs.readdirSync(__dirname + '/logs');
       files.should.have.length(5);
-      files.should.contain('master.log');
-      files.should.contain('workers.access.log');
-      files.should.contain('workers.error.log');
+      files.should.include('master.log');
+      files.should.include('workers.access.log');
+      files.should.include('workers.error.log');
       fs.readFile(__dirname + '/logs/workers.access.log', 'ascii', function(err, str){
         str.should.match(/^GET \//);
         cluster.close();

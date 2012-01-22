@@ -18,7 +18,7 @@ cluster = cluster(server)
   .listen(3001);
 
 if (cluster.isChild) {
-  process.cwd().should.include.string('cluster/test');
+  process.cwd().should.include('cluster/test');
   cluster.on('listening', function(){
     assert.equal(require.paths.join(':'), process.env.REQUIRE_PATHS);
     assert.equal(process.env.FOO, 'bar');

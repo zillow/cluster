@@ -25,9 +25,9 @@ cluster.on('listening', function(){
     res.on('end', function(){
       var files = fs.readdirSync(__dirname + '/logs/nested');
       files.should.have.length(4);
-      files.should.contain('master.log');
-      files.should.contain('workers.access.log');
-      files.should.contain('workers.error.log');
+      files.should.include('master.log');
+      files.should.include('workers.access.log');
+      files.should.include('workers.error.log');
       cluster.close();
     });
   });

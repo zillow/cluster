@@ -1,8 +1,8 @@
 {
-  "name": "cluster",
+  "name": "clustered",
   "description": "extensible multi-core server manager",
   "keywords": ["server", "spark", "fugue", "tcp", "workers"],
-  "version": "0.7.8",
+  "version": "0.8.0",
   "homepage": "http://learnboost.github.com/cluster",
   "repository": "git://github.com/LearnBoost/cluster.git",
   "author": "TJ Holowaychuk <tj@learnboost.com> (http://tjholowaychuk.com)",
@@ -12,5 +12,5 @@
     , "mkdirp": ">= 0.0.1"
   },
   "devDependencies": { "should": "~0.5" },
-  "engines": { "node": "*" }
+  "engines": { "node": "~0.6" }
 }

@@ -5,8 +5,16 @@
 
 var cluster = require('../')
   , http = require('http')
-  , fs = require('fs')
-	, Master = require('../lib/master.js');
+  , fs = require('fs');
+
+// load native API shim for node versions > 0.4.x
+var Master;
+if (parseFloat(process.versions.node) > 0.4) {
+    Master = require('../lib/native');
+}
+else {
+    Master = require('../lib/master');
+}
 
 require('./common');
 
